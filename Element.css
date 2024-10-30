@@ -1,0 +1,72 @@
+:root {
+    box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+}
+
+body * + * {
+    margin-top: 1.5em;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #eee;
+}
+
+header {
+    padding: 1em 1.5em;
+    color: #fff;
+    background-color: blue;
+    border-radius: 0.5em;
+}
+
+/* fixes IE bug */
+main {
+    display: block;
+  }
+
+.container {
+    display: flex;
+}  
+   
+.main {
+    width: 70%; 
+    padding: 1em 1.5em;
+    background-color: #fff;
+    border-radius: .5em;
+}
+
+.sidebar {
+    margin-top: 0;
+    width: 30%;
+    margin-left: 1.5em;
+    padding: 1.5em;     
+    background-color: #fff;
+    border-radius: .5em;
+}
+
+.button-link {
+    display: block;
+    padding: 0.5em;
+    color: #fff;
+    background-color: #0090C9;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+/*Using an adjacent sibling combinator to apply a margin between buttons*/
+.button-link + .button-link {
+    margin-top: 1.5em;  
+}
+
+.sponsor-link {
+    display: block;
+    color: #0072b0;
+    font-weight: bold;
+    text-decoration: none;
+}

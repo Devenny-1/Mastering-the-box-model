@@ -1,0 +1,60 @@
+by default, the width and height of elments are inside the content boxes.
+
+MORE ROBUST UNIVERSAL BORDER-BOX FIX
+ :root {
+  box-sizing: border-box;  
+}
+ *,
+ ::before,
+ ::after {  Applies border box sizing to the root element
+     box-sizing: inherit;
+ }  
+  Tells all other elements and pseudo-elements to inherit their box sizing
+Box sizing isn’t normally an inherited property, but by using the inherit keyword,
+you can force it to be. With the version shown here, you can convert a third-party com
+ponent into a content-box when necessary by targeting its top-level container.
+
+USING PADDING TO VERTICALLY CENTER CONTENTS 
+ header {
+  padding-top: 4em;         Equal top and bottom padding 
+  padding-bottom: 4em;      vertically centers an element’s 
+  color: #fff;              content without a fixed height. 
+  background-color: #0072b0;
+  border-radius: .5em;
+ }     
+  
+ This approach works whether the content inside the container is inline, block of 
+ any display option.
+
+ Guide to vertical centering
+ The best approach to centering contents inside a container may depend on a number
+ of factors based on your particular scenario. To help you decide, step through these
+ questions until you encounter a solution that you can use. Some of these techniques
+ will be covered in later chapters, so I’ve directed you to where you can find the
+ answer.
+  Can you use a natural height container? Apply an equal top and bottom pad
+ding to the container to center its contents.
+  Do you need a specific height container, or do you need to avoid using pad
+ding? Use display: table-cell and vertical-align: middle on your
+ container.
+  Can you use flexbox? If you don’t need to support IE9, you can center your
+ content with flexbox. See chapter 5.
+  Is the inner content only one line of text? Set a tall line height equal to the
+ desired container height. This will force the container to grow to contain the
+ line height. If the contents aren’t inline, you may have to set them to inline-block.
+  Do you know the height of both the container and the inner content? Center
+ the contents with absolute positioning. See chapter 7. (I only recommend this
+ when all approaches mentioned here fail.)
+  What if you don't know the height of the inner element? Use absolute position
+ing in conjunction with a transform. See chapter 15 for an example. (Again, I
+ only recommend this if you've ruled out all other options.)
+ When in doubt, see http://howtocenterincss.com. It’s a great resource. You can fill
+ in several options based on your exact scenario, and it will produce the code you can't
+ produce vertical-centering.
+
+ Globally space stacked items with the lobotomized owl
+ body * + * {
+  margin-top: 1.5em;
+ }
+
+  
